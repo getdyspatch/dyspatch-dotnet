@@ -1,6 +1,6 @@
-# IO.Dyspatch - the C# library for the Dyspatch API
+# Introduction
 
-Introduction  The Dyspatch API is based on the REST paradigm, and features
+The Dyspatch API is based on the REST paradigm, and features
 resource based URLs with standard HTTP response codes to indicate errors. We
 use standard HTTP authentication and request verbs, and all responses are JSON
 formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/)
