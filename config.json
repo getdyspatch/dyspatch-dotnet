@@ -1,0 +1,12 @@
+{
+  "packageName": "IO.Dyspatch",
+  "clientPackage": "IO.Dyspatch.Client",
+  "packageVersion":"1.0.0",
+  "developerEmail": "support@dyspatch.io",
+  "developerName": "Dyspatch",
+  "developerOrganization": "io.dyspatch",
+  "developerOrganizationUrl": "https://www.dyspatch.io",
+  "licenseName": "Apache-2.0",
+  "netCoreProjectFile": true,
+  "targetFramework": "v5.0"
+}
