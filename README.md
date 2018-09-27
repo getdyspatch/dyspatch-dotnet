@@ -58,7 +58,7 @@ namespace Example
             Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new LocalizationsApi();
-            var localizationId = loc_alsdk42081;  // string | A localization ID
+            var localizationId = "loc_alsdk42081";  // string | A localization ID
             var accept = "application/vnd.dyspatch.2018.08+json";  // string | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
 
             try
