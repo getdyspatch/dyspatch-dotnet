@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Url** | **string** | The API url for a specific localization | [optional] 
 **Template** | **string** | An opaque, unique identifier for a template | [optional] 
 **Compiled** | [**CompiledRead**](CompiledRead.md) |  | [optional] 
-**CreatedAt** | **DateTime?** | The time of initial creation | [optional] 
-**UpdatedAt** | **DateTime?** | The time of last update | [optional] 
+**CreatedAt** | **DateTimeOffset?** | The time of initial creation | [optional] 
+**UpdatedAt** | **DateTimeOffset?** | The time of last update | [optional] 
 **Name** | **string** | The user-specified name of a localization | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

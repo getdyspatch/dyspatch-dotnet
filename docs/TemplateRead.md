@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Description** | **string** | A description of the template | [optional] 
 **Url** | **string** | The API url for a specific template | [optional] 
 **Compiled** | [**CompiledRead**](CompiledRead.md) |  | [optional] 
-**CreatedAt** | **DateTime?** | The time of initial creation | [optional] 
-**UpdatedAt** | **DateTime?** | The time of last update | [optional] 
+**CreatedAt** | **DateTimeOffset?** | The time of initial creation | [optional] 
+**UpdatedAt** | **DateTimeOffset?** | The time of last update | [optional] 
 **Localizations** | [**List&lt;LocalizationMetaRead&gt;**](LocalizationMetaRead.md) | A list of the Template&#39;s available localizations | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,36 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
     <AssemblyName>IO.Dyspatch</AssemblyName>
     <PackageId>Dyspatch</PackageId>
     <OutputType>Library</OutputType>
     <Authors>Dyspatch</Authors>
     <Company>Dyspatch</Company>
-    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A .net client for interfacing with they Dyspatch.io API.</Description>
-    <Copyright>2018</Copyright>
+    <AssemblyTitle>Dyspatch OpenAPI Library</AssemblyTitle>
+    <Description>A .net client for interfacing with the Dyspatch.io API.</Description>
+    <Copyright>2019</Copyright>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>IO.Dyspatch</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/getdyspatch/dyspatch-dotnet/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/getdyspatch/dyspatch-dotnet</PackageProjectUrl>
-    <PackageIconUrl>https://www.dyspatch.io/wp-content/uploads/2018/03/favicon-144-shadow.png</PackageIconUrl>
+    <PackageIconUrl>https://www.dyspatch.io/wp-content/uploads/2019/05/Dyspatch-Icon-square-1060.jpg</PackageIconUrl>
     <RepositoryUrl>https://github.com/getdyspatch/dyspatch-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>API Dyspatch Email</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.8" />
-    <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.8" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.7" />
+    <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="JsonSubTypes" Version="1.2.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Use License file from project root -->
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 

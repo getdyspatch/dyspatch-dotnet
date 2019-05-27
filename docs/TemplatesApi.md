@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="templatesget"></a>
 # **TemplatesGet**
-> TemplatesRead TemplatesGet (string accept, string cursor = null)
+> TemplatesRead TemplatesGet (string cursor = null, string accept = null)
 
 List Templates
 
@@ -36,13 +36,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TemplatesApi();
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
             var cursor = cursor_example;  // string | A cursor value used to retrieve a specific page from a paginated result set. (optional) 
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.03\", set the value to \"application/vnd.dyspatch.2019.03+json\" (optional) 
 
             try
             {
                 // List Templates
-                TemplatesRead result = apiInstance.TemplatesGet(accept, cursor);
+                TemplatesRead result = apiInstance.TemplatesGet(cursor, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -58,8 +58,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; | 
  **cursor** | **string**| A cursor value used to retrieve a specific page from a paginated result set. | [optional] 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; | [optional] 
 
 ### Return type
 
@@ -72,13 +72,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2018.08+json
+ - **Accept**: application/vnd.dyspatch.2019.03+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="templatestemplateidget"></a>
 # **TemplatesTemplateIdGet**
-> TemplateRead TemplatesTemplateIdGet (string templateId, string accept)
+> TemplateRead TemplatesTemplateIdGet (string templateId, string targetLanguage = null, string accept = null)
 
 Get Template by ID
 
@@ -105,12 +105,13 @@ namespace Example
 
             var apiInstance = new TemplatesApi();
             var templateId = templateId_example;  // string | A template ID
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+            var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates. (optional) 
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.03\", set the value to \"application/vnd.dyspatch.2019.03+json\" (optional) 
 
             try
             {
                 // Get Template by ID
-                TemplateRead result = apiInstance.TemplatesTemplateIdGet(templateId, accept);
+                TemplateRead result = apiInstance.TemplatesTemplateIdGet(templateId, targetLanguage, accept);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,7 +128,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**| A template ID | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; | 
+ **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | [optional] 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; | [optional] 
 
 ### Return type
 
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2018.08+json
+ - **Accept**: application/vnd.dyspatch.2019.03+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
