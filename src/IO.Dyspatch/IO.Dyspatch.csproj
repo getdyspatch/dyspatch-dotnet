@@ -18,7 +18,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/getdyspatch/dyspatch-dotnet</PackageProjectUrl>
-    <PackageIconUrl>https://www.dyspatch.io/wp-content/uploads/2018/03/favicon-144-shadow.png</PackageIconUrl>
+    <PackageIconUrl>https://www.dyspatch.io/wp-content/uploads/2019/05/Dyspatch-Icon-square-1060.jpg</PackageIconUrl>
     <RepositoryUrl>https://github.com/getdyspatch/dyspatch-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>API Dyspatch Email</PackageTags>
