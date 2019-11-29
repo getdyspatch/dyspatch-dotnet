@@ -23,35 +23,25 @@ using SwaggerDateConverter = IO.Dyspatch.Client.SwaggerDateConverter;
 namespace IO.Dyspatch.Model
 {
     /// <summary>
-    /// Information about paginated results
+    /// Body
     /// </summary>
     [DataContract]
-    public partial class Cursor :  IEquatable<Cursor>
+    public partial class Body :  IEquatable<Body>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cursor" /> class.
+        /// Initializes a new instance of the <see cref="Body" /> class.
         /// </summary>
-        /// <param name="next">A cursor to fetch the next page of results.</param>
-        /// <param name="hasMore">Whether there is a next page of results.</param>
-        public Cursor(string next = default(string), bool? hasMore = default(bool?))
+        /// <param name="name">name.</param>
+        public Body(string name = default(string))
         {
-            this.Next = next;
-            this.HasMore = hasMore;
+            this.Name = name;
         }
         
         /// <summary>
-        /// A cursor to fetch the next page of results
+        /// Gets or Sets Name
         /// </summary>
-        /// <value>A cursor to fetch the next page of results</value>
-        [DataMember(Name="next", EmitDefaultValue=false)]
-        public string Next { get; set; }
-
-        /// <summary>
-        /// Whether there is a next page of results
-        /// </summary>
-        /// <value>Whether there is a next page of results</value>
-        [DataMember(Name="hasMore", EmitDefaultValue=false)]
-        public bool? HasMore { get; set; }
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +50,8 @@ namespace IO.Dyspatch.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Cursor {\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
-            sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("class Body {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +72,24 @@ namespace IO.Dyspatch.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Cursor);
+            return this.Equals(input as Body);
         }
 
         /// <summary>
-        /// Returns true if Cursor instances are equal
+        /// Returns true if Body instances are equal
         /// </summary>
-        /// <param name="input">Instance of Cursor to be compared</param>
+        /// <param name="input">Instance of Body to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Cursor input)
+        public bool Equals(Body input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    (this.HasMore != null &&
-                    this.HasMore.Equals(input.HasMore))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -118,10 +102,8 @@ namespace IO.Dyspatch.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
-                if (this.HasMore != null)
-                    hashCode = hashCode * 59 + this.HasMore.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

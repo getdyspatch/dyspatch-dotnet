@@ -23,36 +23,19 @@ using SwaggerDateConverter = IO.Dyspatch.Client.SwaggerDateConverter;
 namespace IO.Dyspatch.Model
 {
     /// <summary>
-    /// Information about paginated results
+    /// The name of a draft
     /// </summary>
     [DataContract]
-    public partial class Cursor :  IEquatable<Cursor>
+    public partial class DraftName :  IEquatable<DraftName>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cursor" /> class.
+        /// Initializes a new instance of the <see cref="DraftName" /> class.
         /// </summary>
-        /// <param name="next">A cursor to fetch the next page of results.</param>
-        /// <param name="hasMore">Whether there is a next page of results.</param>
-        public Cursor(string next = default(string), bool? hasMore = default(bool?))
+        [JsonConstructorAttribute]
+        public DraftName()
         {
-            this.Next = next;
-            this.HasMore = hasMore;
         }
         
-        /// <summary>
-        /// A cursor to fetch the next page of results
-        /// </summary>
-        /// <value>A cursor to fetch the next page of results</value>
-        [DataMember(Name="next", EmitDefaultValue=false)]
-        public string Next { get; set; }
-
-        /// <summary>
-        /// Whether there is a next page of results
-        /// </summary>
-        /// <value>Whether there is a next page of results</value>
-        [DataMember(Name="hasMore", EmitDefaultValue=false)]
-        public bool? HasMore { get; set; }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +43,7 @@ namespace IO.Dyspatch.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Cursor {\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
-            sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("class DraftName {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,30 +64,20 @@ namespace IO.Dyspatch.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Cursor);
+            return this.Equals(input as DraftName);
         }
 
         /// <summary>
-        /// Returns true if Cursor instances are equal
+        /// Returns true if DraftName instances are equal
         /// </summary>
-        /// <param name="input">Instance of Cursor to be compared</param>
+        /// <param name="input">Instance of DraftName to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Cursor input)
+        public bool Equals(DraftName input)
         {
             if (input == null)
                 return false;
 
-            return 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                ) && 
-                (
-                    this.HasMore == input.HasMore ||
-                    (this.HasMore != null &&
-                    this.HasMore.Equals(input.HasMore))
-                );
+            return false;
         }
 
         /// <summary>
@@ -118,10 +89,6 @@ namespace IO.Dyspatch.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
-                if (this.HasMore != null)
-                    hashCode = hashCode * 59 + this.HasMore.GetHashCode();
                 return hashCode;
             }
         }

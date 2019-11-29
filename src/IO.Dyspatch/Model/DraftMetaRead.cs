@@ -23,62 +23,80 @@ using SwaggerDateConverter = IO.Dyspatch.Client.SwaggerDateConverter;
 namespace IO.Dyspatch.Model
 {
     /// <summary>
-    /// LocalizationMetaRead
+    /// DraftMetaRead
     /// </summary>
     [DataContract]
-    public partial class LocalizationMetaRead :  IEquatable<LocalizationMetaRead>
+    public partial class DraftMetaRead :  IEquatable<DraftMetaRead>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LocalizationMetaRead" /> class.
+        /// Initializes a new instance of the <see cref="DraftMetaRead" /> class.
         /// </summary>
-        /// <param name="id">An opaque, unique identifier for a localization.</param>
-        /// <param name="language">A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). .</param>
-        /// <param name="name">The user-specified name of a localization.</param>
-        /// <param name="url">The API url for a specific localization.</param>
-        /// <param name="draft">An opaque, unique identifier for a draft.</param>
-        public LocalizationMetaRead(string id = default(string), string language = default(string), string name = default(string), string url = default(string), string draft = default(string))
+        /// <param name="id">An opaque, unique identifier for a draft.</param>
+        /// <param name="templateId">An opaque, unique identifier for a template.</param>
+        /// <param name="name">The name of a draft.</param>
+        /// <param name="description">A description of the draft.</param>
+        /// <param name="url">The API url for a specific draft.</param>
+        /// <param name="createdAt">The time of initial creation.</param>
+        /// <param name="updatedAt">The time of last update.</param>
+        public DraftMetaRead(string id = default(string), string templateId = default(string), string name = default(string), string description = default(string), string url = default(string), DateTimeOffset? createdAt = default(DateTimeOffset?), DateTimeOffset? updatedAt = default(DateTimeOffset?))
         {
             this.Id = id;
-            this.Language = language;
+            this.TemplateId = templateId;
             this.Name = name;
+            this.Description = description;
             this.Url = url;
-            this.Draft = draft;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
         
-        /// <summary>
-        /// An opaque, unique identifier for a localization
-        /// </summary>
-        /// <value>An opaque, unique identifier for a localization</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). 
-        /// </summary>
-        /// <value>A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). </value>
-        [DataMember(Name="language", EmitDefaultValue=false)]
-        public string Language { get; set; }
-
-        /// <summary>
-        /// The user-specified name of a localization
-        /// </summary>
-        /// <value>The user-specified name of a localization</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The API url for a specific localization
-        /// </summary>
-        /// <value>The API url for a specific localization</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
-        public string Url { get; set; }
-
         /// <summary>
         /// An opaque, unique identifier for a draft
         /// </summary>
         /// <value>An opaque, unique identifier for a draft</value>
-        [DataMember(Name="draft", EmitDefaultValue=false)]
-        public string Draft { get; set; }
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// An opaque, unique identifier for a template
+        /// </summary>
+        /// <value>An opaque, unique identifier for a template</value>
+        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        public string TemplateId { get; set; }
+
+        /// <summary>
+        /// The name of a draft
+        /// </summary>
+        /// <value>The name of a draft</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// A description of the draft
+        /// </summary>
+        /// <value>A description of the draft</value>
+        [DataMember(Name="description", EmitDefaultValue=false)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// The API url for a specific draft
+        /// </summary>
+        /// <value>The API url for a specific draft</value>
+        [DataMember(Name="url", EmitDefaultValue=false)]
+        public string Url { get; set; }
+
+        /// <summary>
+        /// The time of initial creation
+        /// </summary>
+        /// <value>The time of initial creation</value>
+        [DataMember(Name="createdAt", EmitDefaultValue=false)]
+        public DateTimeOffset? CreatedAt { get; set; }
+
+        /// <summary>
+        /// The time of last update
+        /// </summary>
+        /// <value>The time of last update</value>
+        [DataMember(Name="updatedAt", EmitDefaultValue=false)]
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,12 +105,14 @@ namespace IO.Dyspatch.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class LocalizationMetaRead {\n");
+            sb.Append("class DraftMetaRead {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
+            sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  Draft: ").Append(Draft).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,15 +133,15 @@ namespace IO.Dyspatch.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LocalizationMetaRead);
+            return this.Equals(input as DraftMetaRead);
         }
 
         /// <summary>
-        /// Returns true if LocalizationMetaRead instances are equal
+        /// Returns true if DraftMetaRead instances are equal
         /// </summary>
-        /// <param name="input">Instance of LocalizationMetaRead to be compared</param>
+        /// <param name="input">Instance of DraftMetaRead to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LocalizationMetaRead input)
+        public bool Equals(DraftMetaRead input)
         {
             if (input == null)
                 return false;
@@ -133,9 +153,9 @@ namespace IO.Dyspatch.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
+                    this.TemplateId == input.TemplateId ||
+                    (this.TemplateId != null &&
+                    this.TemplateId.Equals(input.TemplateId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -143,14 +163,24 @@ namespace IO.Dyspatch.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
                 ) && 
                 (
-                    this.Draft == input.Draft ||
-                    (this.Draft != null &&
-                    this.Draft.Equals(input.Draft))
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -165,14 +195,18 @@ namespace IO.Dyspatch.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.TemplateId != null)
+                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Draft != null)
-                    hashCode = hashCode * 59 + this.Draft.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

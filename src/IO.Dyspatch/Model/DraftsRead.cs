@@ -23,35 +23,35 @@ using SwaggerDateConverter = IO.Dyspatch.Client.SwaggerDateConverter;
 namespace IO.Dyspatch.Model
 {
     /// <summary>
-    /// Information about paginated results
+    /// DraftsRead
     /// </summary>
     [DataContract]
-    public partial class Cursor :  IEquatable<Cursor>
+    public partial class DraftsRead :  IEquatable<DraftsRead>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cursor" /> class.
+        /// Initializes a new instance of the <see cref="DraftsRead" /> class.
         /// </summary>
-        /// <param name="next">A cursor to fetch the next page of results.</param>
-        /// <param name="hasMore">Whether there is a next page of results.</param>
-        public Cursor(string next = default(string), bool? hasMore = default(bool?))
+        /// <param name="cursor">Information about paginated results.</param>
+        /// <param name="data">A list of draft metadata objects.</param>
+        public DraftsRead(Object cursor = default(Object), List<DraftMetaRead> data = default(List<DraftMetaRead>))
         {
-            this.Next = next;
-            this.HasMore = hasMore;
+            this.Cursor = cursor;
+            this.Data = data;
         }
         
         /// <summary>
-        /// A cursor to fetch the next page of results
+        /// Information about paginated results
         /// </summary>
-        /// <value>A cursor to fetch the next page of results</value>
-        [DataMember(Name="next", EmitDefaultValue=false)]
-        public string Next { get; set; }
+        /// <value>Information about paginated results</value>
+        [DataMember(Name="cursor", EmitDefaultValue=false)]
+        public Object Cursor { get; set; }
 
         /// <summary>
-        /// Whether there is a next page of results
+        /// A list of draft metadata objects
         /// </summary>
-        /// <value>Whether there is a next page of results</value>
-        [DataMember(Name="hasMore", EmitDefaultValue=false)]
-        public bool? HasMore { get; set; }
+        /// <value>A list of draft metadata objects</value>
+        [DataMember(Name="data", EmitDefaultValue=false)]
+        public List<DraftMetaRead> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +60,9 @@ namespace IO.Dyspatch.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Cursor {\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
-            sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("class DraftsRead {\n");
+            sb.Append("  Cursor: ").Append(Cursor).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +83,29 @@ namespace IO.Dyspatch.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Cursor);
+            return this.Equals(input as DraftsRead);
         }
 
         /// <summary>
-        /// Returns true if Cursor instances are equal
+        /// Returns true if DraftsRead instances are equal
         /// </summary>
-        /// <param name="input">Instance of Cursor to be compared</param>
+        /// <param name="input">Instance of DraftsRead to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Cursor input)
+        public bool Equals(DraftsRead input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
+                    this.Cursor == input.Cursor ||
+                    (this.Cursor != null &&
+                    this.Cursor.Equals(input.Cursor))
                 ) && 
                 (
-                    this.HasMore == input.HasMore ||
-                    (this.HasMore != null &&
-                    this.HasMore.Equals(input.HasMore))
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -118,10 +118,10 @@ namespace IO.Dyspatch.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
-                if (this.HasMore != null)
-                    hashCode = hashCode * 59 + this.HasMore.GetHashCode();
+                if (this.Cursor != null)
+                    hashCode = hashCode * 59 + this.Cursor.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }
