@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="localizationslocalizationidget"></a>
 # **LocalizationsLocalizationIdGet**
-> LocalizationRead LocalizationsLocalizationIdGet (string localizationId, string targetLanguage = null, string accept = null)
+> LocalizationRead LocalizationsLocalizationIdGet (string localizationId, string targetLanguage)
 
 Get Localization Object by ID
 
-Returns a specific localization object with a matching ID
+Returns a specific localization object with a matching ID.
 
 ### Example
 ```csharp
@@ -36,13 +36,12 @@ namespace Example
 
             var apiInstance = new LocalizationsApi();
             var localizationId = localizationId_example;  // string | A localization ID
-            var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates. (optional) 
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.03\", set the value to \"application/vnd.dyspatch.2019.03+json\" (optional) 
+            var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates.
 
             try
             {
                 // Get Localization Object by ID
-                LocalizationRead result = apiInstance.LocalizationsLocalizationIdGet(localizationId, targetLanguage, accept);
+                LocalizationRead result = apiInstance.LocalizationsLocalizationIdGet(localizationId, targetLanguage);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,8 +58,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **string**| A localization ID | 
- **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | [optional] 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; | [optional] 
+ **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | 
 
 ### Return type
 
@@ -73,7 +71,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.03+json
+ - **Accept**: application/vnd.dyspatch.2019.10+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

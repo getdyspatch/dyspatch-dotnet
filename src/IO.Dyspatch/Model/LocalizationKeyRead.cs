@@ -23,35 +23,33 @@ using SwaggerDateConverter = IO.Dyspatch.Client.SwaggerDateConverter;
 namespace IO.Dyspatch.Model
 {
     /// <summary>
-    /// Information about paginated results
+    /// LocalizationKeyRead
     /// </summary>
     [DataContract]
-    public partial class Cursor :  IEquatable<Cursor>
+    public partial class LocalizationKeyRead :  IEquatable<LocalizationKeyRead>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cursor" /> class.
+        /// Initializes a new instance of the <see cref="LocalizationKeyRead" /> class.
         /// </summary>
-        /// <param name="next">A cursor to fetch the next page of results.</param>
-        /// <param name="hasMore">Whether there is a next page of results.</param>
-        public Cursor(string next = default(string), bool? hasMore = default(bool?))
+        /// <param name="key">key.</param>
+        /// <param name="comment">comment.</param>
+        public LocalizationKeyRead(string key = default(string), string comment = default(string))
         {
-            this.Next = next;
-            this.HasMore = hasMore;
+            this.Key = key;
+            this.Comment = comment;
         }
         
         /// <summary>
-        /// A cursor to fetch the next page of results
+        /// Gets or Sets Key
         /// </summary>
-        /// <value>A cursor to fetch the next page of results</value>
-        [DataMember(Name="next", EmitDefaultValue=false)]
-        public string Next { get; set; }
+        [DataMember(Name="key", EmitDefaultValue=false)]
+        public string Key { get; set; }
 
         /// <summary>
-        /// Whether there is a next page of results
+        /// Gets or Sets Comment
         /// </summary>
-        /// <value>Whether there is a next page of results</value>
-        [DataMember(Name="hasMore", EmitDefaultValue=false)]
-        public bool? HasMore { get; set; }
+        [DataMember(Name="comment", EmitDefaultValue=false)]
+        public string Comment { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +58,9 @@ namespace IO.Dyspatch.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Cursor {\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
-            sb.Append("  HasMore: ").Append(HasMore).Append("\n");
+            sb.Append("class LocalizationKeyRead {\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +81,29 @@ namespace IO.Dyspatch.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Cursor);
+            return this.Equals(input as LocalizationKeyRead);
         }
 
         /// <summary>
-        /// Returns true if Cursor instances are equal
+        /// Returns true if LocalizationKeyRead instances are equal
         /// </summary>
-        /// <param name="input">Instance of Cursor to be compared</param>
+        /// <param name="input">Instance of LocalizationKeyRead to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Cursor input)
+        public bool Equals(LocalizationKeyRead input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
                 ) && 
                 (
-                    this.HasMore == input.HasMore ||
-                    (this.HasMore != null &&
-                    this.HasMore.Equals(input.HasMore))
+                    this.Comment == input.Comment ||
+                    (this.Comment != null &&
+                    this.Comment.Equals(input.Comment))
                 );
         }
 
@@ -118,10 +116,10 @@ namespace IO.Dyspatch.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
-                if (this.HasMore != null)
-                    hashCode = hashCode * 59 + this.HasMore.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Comment != null)
+                    hashCode = hashCode * 59 + this.Comment.GetHashCode();
                 return hashCode;
             }
         }
