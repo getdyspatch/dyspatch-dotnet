@@ -3,18 +3,26 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
     <AssemblyName>IO.Dyspatch</AssemblyName>
-    <PackageId>IO.Dyspatch</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>Swagger</Authors>
-    <Company>Swagger</Company>
-    <AssemblyTitle>Swagger Library</AssemblyTitle>
-    <Description>A library generated from a Swagger doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <PackageId>Dyspatch</PackageId>
+    <Authors>Dyspatch</Authors>
+    <Company>Dyspatch</Company>
+    <AssemblyTitle>Dyspatch OpenAPI Library</AssemblyTitle>
+    <Description>A .net client for interfacing with the Dyspatch.io API.</Description>
+    <Copyright>2019</Copyright>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>IO.Dyspatch</RootNamespace>
     <Version>3.0.0</Version>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/getdyspatch/dyspatch-dotnet</PackageProjectUrl>
+    <PackageIconUrl>https://www.dyspatch.io/wp-content/uploads/2019/05/Dyspatch-Icon-square-1060.jpg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/getdyspatch/dyspatch-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>API Dyspatch Email</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,5 +32,8 @@
     <PackageReference Include="JsonSubTypes" Version="1.2.0" />
   </ItemGroup>
 
-
+  <ItemGroup>
+    <!-- Use License file from project root -->
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
 </Project>
