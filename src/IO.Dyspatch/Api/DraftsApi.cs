@@ -192,9 +192,10 @@ namespace IO.Dyspatch.Api
         /// Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </remarks>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>DraftsRead</returns>
-        DraftsRead DraftsGet (string status = null);
+        DraftsRead DraftsGet (string cursor = null, string status = null);
 
         /// <summary>
         /// List Drafts
@@ -203,9 +204,10 @@ namespace IO.Dyspatch.Api
         /// Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </remarks>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>ApiResponse of DraftsRead</returns>
-        ApiResponse<DraftsRead> DraftsGetWithHttpInfo (string status = null);
+        ApiResponse<DraftsRead> DraftsGetWithHttpInfo (string cursor = null, string status = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -376,9 +378,10 @@ namespace IO.Dyspatch.Api
         /// Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </remarks>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>Task of DraftsRead</returns>
-        System.Threading.Tasks.Task<DraftsRead> DraftsGetAsync (string status = null);
+        System.Threading.Tasks.Task<DraftsRead> DraftsGetAsync (string cursor = null, string status = null);
 
         /// <summary>
         /// List Drafts
@@ -387,9 +390,10 @@ namespace IO.Dyspatch.Api
         /// Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </remarks>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>Task of ApiResponse (DraftsRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DraftsRead>> DraftsGetAsyncWithHttpInfo (string status = null);
+        System.Threading.Tasks.Task<ApiResponse<DraftsRead>> DraftsGetAsyncWithHttpInfo (string cursor = null, string status = null);
         #endregion Asynchronous Operations
     }
 
@@ -1595,11 +1599,12 @@ namespace IO.Dyspatch.Api
         /// List Drafts Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </summary>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>DraftsRead</returns>
-        public DraftsRead DraftsGet (string status = null)
+        public DraftsRead DraftsGet (string cursor = null, string status = null)
         {
-             ApiResponse<DraftsRead> localVarResponse = DraftsGetWithHttpInfo(status);
+             ApiResponse<DraftsRead> localVarResponse = DraftsGetWithHttpInfo(cursor, status);
              return localVarResponse.Data;
         }
 
@@ -1607,9 +1612,10 @@ namespace IO.Dyspatch.Api
         /// List Drafts Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </summary>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>ApiResponse of DraftsRead</returns>
-        public ApiResponse< DraftsRead > DraftsGetWithHttpInfo (string status = null)
+        public ApiResponse< DraftsRead > DraftsGetWithHttpInfo (string cursor = null, string status = null)
         {
 
             var localVarPath = "./drafts";
@@ -1633,6 +1639,7 @@ namespace IO.Dyspatch.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
 
             // authentication (Bearer) required
@@ -1663,11 +1670,12 @@ namespace IO.Dyspatch.Api
         /// List Drafts Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </summary>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>Task of DraftsRead</returns>
-        public async System.Threading.Tasks.Task<DraftsRead> DraftsGetAsync (string status = null)
+        public async System.Threading.Tasks.Task<DraftsRead> DraftsGetAsync (string cursor = null, string status = null)
         {
-             ApiResponse<DraftsRead> localVarResponse = await DraftsGetAsyncWithHttpInfo(status);
+             ApiResponse<DraftsRead> localVarResponse = await DraftsGetAsyncWithHttpInfo(cursor, status);
              return localVarResponse.Data;
 
         }
@@ -1676,9 +1684,10 @@ namespace IO.Dyspatch.Api
         /// List Drafts Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
         /// </summary>
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
         /// <returns>Task of ApiResponse (DraftsRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DraftsRead>> DraftsGetAsyncWithHttpInfo (string status = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DraftsRead>> DraftsGetAsyncWithHttpInfo (string cursor = null, string status = null)
         {
 
             var localVarPath = "./drafts";
@@ -1702,6 +1711,7 @@ namespace IO.Dyspatch.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
 
             // authentication (Bearer) required
