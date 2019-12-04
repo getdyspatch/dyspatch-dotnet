@@ -14,7 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>IO.Dyspatch</RootNamespace>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/getdyspatch/dyspatch-dotnet</PackageProjectUrl>
@@ -32,8 +32,8 @@
     <PackageReference Include="JsonSubTypes" Version="1.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <!-- Use License file from project root -->
-    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  <ItemGroup>	
+    <!-- Use License file from project root -->	
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />	
   </ItemGroup>
 </Project>

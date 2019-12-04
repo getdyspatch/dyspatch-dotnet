@@ -488,7 +488,7 @@ void (empty response body)
 
 <a name="draftsget"></a>
 # **DraftsGet**
-> DraftsRead DraftsGet (string status = null)
+> DraftsRead DraftsGet (string cursor = null, string status = null)
 
 List Drafts
 
@@ -514,12 +514,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DraftsApi();
+            var cursor = cursor_example;  // string | A cursor value used to retrieve a specific page from a paginated result set. (optional) 
             var status = status_example;  // string | Filter the list of drafts by a particular status (optional) 
 
             try
             {
                 // List Drafts
-                DraftsRead result = apiInstance.DraftsGet(status);
+                DraftsRead result = apiInstance.DraftsGet(cursor, status);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -535,6 +536,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cursor** | **string**| A cursor value used to retrieve a specific page from a paginated result set. | [optional] 
  **status** | **string**| Filter the list of drafts by a particular status | [optional] 
 
 ### Return type
