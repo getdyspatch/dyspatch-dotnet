@@ -29,7 +29,7 @@ namespace IO.Dyspatch.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.0.1";
+        public const string Version = "3.0.2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,7 +110,7 @@ namespace IO.Dyspatch.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Swagger-Codegen/3.0.1/csharp";
+            UserAgent = "Swagger-Codegen/3.0.2/csharp";
             BasePath = "https://api.dyspatch.io";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -183,7 +183,7 @@ namespace IO.Dyspatch.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Swagger-Codegen/3.0.1/csharp"
+            string userAgent = "Swagger-Codegen/3.0.2/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -416,7 +416,7 @@ namespace IO.Dyspatch.Client
             String report = "C# SDK (IO.Dyspatch) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: 2019.10\n";
-            report += "    SDK Package Version: 3.0.1\n";
+            report += "    SDK Package Version: 3.0.2\n";
 
             return report;
         }

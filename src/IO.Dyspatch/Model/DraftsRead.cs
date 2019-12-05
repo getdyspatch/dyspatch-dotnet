@@ -31,20 +31,19 @@ namespace IO.Dyspatch.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DraftsRead" /> class.
         /// </summary>
-        /// <param name="cursor">Information about paginated results.</param>
+        /// <param name="cursor">cursor.</param>
         /// <param name="data">A list of draft metadata objects.</param>
-        public DraftsRead(Object cursor = default(Object), List<DraftMetaRead> data = default(List<DraftMetaRead>))
+        public DraftsRead(Cursor cursor = default(Cursor), List<DraftMetaRead> data = default(List<DraftMetaRead>))
         {
             this.Cursor = cursor;
             this.Data = data;
         }
         
         /// <summary>
-        /// Information about paginated results
+        /// Gets or Sets Cursor
         /// </summary>
-        /// <value>Information about paginated results</value>
         [DataMember(Name="cursor", EmitDefaultValue=false)]
-        public Object Cursor { get; set; }
+        public Cursor Cursor { get; set; }
 
         /// <summary>
         /// A list of draft metadata objects
