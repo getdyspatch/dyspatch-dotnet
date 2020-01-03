@@ -588,7 +588,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -670,7 +670,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -754,7 +754,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -839,7 +839,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -917,7 +917,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -996,7 +996,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1074,7 +1074,7 @@ namespace IO.Dyspatch.Api
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1153,7 +1153,7 @@ namespace IO.Dyspatch.Api
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1230,7 +1230,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1308,7 +1308,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1395,7 +1395,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
             if (inlineObject != null && inlineObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(inlineObject); // http body (model) parameter
@@ -1491,7 +1491,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
             if (inlineObject != null && inlineObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(inlineObject); // http body (model) parameter
@@ -1586,7 +1586,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -1682,7 +1682,7 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -1766,7 +1766,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1843,7 +1843,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

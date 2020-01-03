@@ -13,17 +13,30 @@ namespace IO.Dyspatch.Tests
 
         public IntegrationTest()
         {
-            Configuration.Default.ApiKey.Add("Authorization", "TODO");
-            Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            Configuration config = new Configuration();
+            config.ApiKey.Add(
+                "Authorization",
+                Environment.GetEnvironmentVariable("DYSPATCH_API_KEY")
+            );
+            config.ApiKeyPrefix.Add("Authorization", "Bearer");
 
-            drafts = new DraftsApi(Configuration.Default);
-            templates = new TemplatesApi(Configuration.Default);
+            drafts = new DraftsApi(config);
+            templates = new TemplatesApi(config);
         }
 
 
         [Fact]
         public void GetTemplates()
         {
+            var accept = "application/vnd.dyspatch.2019.10+json";
+            templates.GetTemplates(accept, "");
+        }
+
+        [Fact]
+        public void GetDrafts()
+        {
+            var accept = "application/vnd.dyspatch.2019.10+json";
+            drafts.GetDrafts(accept, "");
         }
     }
 }

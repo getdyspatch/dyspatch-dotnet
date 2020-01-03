@@ -291,7 +291,7 @@ namespace IO.Dyspatch.Api
 
             if (templateId != null) localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -376,7 +376,7 @@ namespace IO.Dyspatch.Api
 
             if (templateId != null) localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -451,7 +451,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -527,7 +527,7 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
