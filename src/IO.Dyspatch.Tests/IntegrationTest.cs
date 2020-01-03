@@ -29,14 +29,22 @@ namespace IO.Dyspatch.Tests
         public void GetTemplates()
         {
             var accept = "application/vnd.dyspatch.2019.10+json";
+            var id = "tem_01de5teh6k59kya8q92mb01qzq";
+            var lang = "handlebars";
+
             templates.GetTemplates(accept, "");
+            templates.GetTemplateById(id, lang, accept);
         }
 
         [Fact]
         public void GetDrafts()
         {
             var accept = "application/vnd.dyspatch.2019.10+json";
+            var id = "tem_01de5teh6k59kya8q92mb01qzq";
+            var lang = "handlebars";
+
             drafts.GetDrafts(accept, "");
+            drafts.GetDraftById(id, lang, accept);
         }
     }
 }
