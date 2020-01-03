@@ -40,7 +40,7 @@ namespace IO.Dyspatch.Tests
         public void GetDrafts()
         {
             var accept = "application/vnd.dyspatch.2019.10+json";
-            var id = "tem_01de5teh6k59kya8q92mb01qzq";
+            var id = "tdft_01dxkwr0nevs5h2baa3n3dgktp";
             var lang = "handlebars";
 
             drafts.GetDrafts(accept, "");
