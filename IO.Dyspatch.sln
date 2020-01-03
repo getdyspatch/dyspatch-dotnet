@@ -1,8 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Dyspatch", "src\IO.Dyspatch\IO.Dyspatch.csproj", "{E266CD2E-BF18-4B14-8966-0E0350C5B851}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4949C6E-E5C7-4C4B-818C-ED8E6535CF56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Dyspatch.Tests", "src\IO.Dyspatch.Tests\IO.Dyspatch.Tests.csproj", "{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +22,15 @@ Global
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DD6FE9BC-ABAF-4748-B19F-D7AD1F7E9954} = {B4949C6E-E5C7-4C4B-818C-ED8E6535CF56}
 	EndGlobalSection
 EndGlobal
