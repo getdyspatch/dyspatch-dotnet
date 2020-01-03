@@ -1,7 +1,7 @@
-/*
+/* 
  * Dyspatch API
  *
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby)
+ * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby)  
  *
  * The version of the OpenAPI document: 2019.10
  * Contact: support@dyspatch.io
@@ -425,8 +425,8 @@ namespace IO.Dyspatch.Api
         public ApiResponse<TemplatesRead> GetTemplatesWithHttpInfo (string accept, string cursor = default(string))
         {
             // verify the required parameter 'accept' is set
-            // if (accept == null)
-                // throw new ApiException(400, "Missing required parameter 'accept' when calling TemplatesApi->GetTemplates");
+            if (accept == null)
+                throw new ApiException(400, "Missing required parameter 'accept' when calling TemplatesApi->GetTemplates");
 
             var localVarPath = "./templates";
             var localVarPathParams = new Dictionary<String, String>();
