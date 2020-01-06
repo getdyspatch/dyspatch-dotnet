@@ -1,4 +1,6 @@
+
 # IO.Dyspatch.Model.DraftMetaRead
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -8,8 +10,10 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of a draft | [optional] 
 **Description** | **string** | A description of the draft | [optional] 
 **Url** | **string** | The API url for a specific draft | [optional] 
-**CreatedAt** | **DateTimeOffset?** | The time of initial creation | [optional] 
-**UpdatedAt** | **DateTimeOffset?** | The time of last update | [optional] 
+**CreatedAt** | **DateTimeOffset** | The time of initial creation | [optional] 
+**UpdatedAt** | **DateTimeOffset** | The time of last update | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 
