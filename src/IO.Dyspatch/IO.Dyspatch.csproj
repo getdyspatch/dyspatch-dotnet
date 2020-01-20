@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <AssemblyName>IO.Dyspatch</AssemblyName>
-    <PackageId>IO.Dyspatch</PackageId>
+    <AssemblyName>Dyspatch</AssemblyName>
+    <PackageId>Dyspatch</PackageId>
     <OutputType>Library</OutputType>
     <Authors>OpenAPI</Authors>
     <Company>OpenAPI</Company>
