@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.InlineObject
+# Dyspatch.Model.InlineObject
 
 ## Properties
 

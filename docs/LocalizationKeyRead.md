@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.LocalizationKeyRead
+# Dyspatch.Model.LocalizationKeyRead
 
 ## Properties
 

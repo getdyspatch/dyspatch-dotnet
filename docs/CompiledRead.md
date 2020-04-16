@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.CompiledRead
+# Dyspatch.Model.CompiledRead
 
 ## Properties
 

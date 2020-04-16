@@ -1,4 +1,4 @@
-# IO.Dyspatch.Api.TemplatesApi
+# Dyspatch.Api.TemplatesApi
 
 All URIs are relative to *https://api.dyspatch.io*
 
@@ -22,9 +22,9 @@ Gets a template object with the matching ID. If the template has published conte
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -41,7 +41,7 @@ namespace Example
             var apiInstance = new TemplatesApi(Configuration.Default);
             var templateId = templateId_example;  // string | A template ID
             var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates.
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**| A template ID | 
  **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, */*
+- **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -113,9 +113,9 @@ Gets a list of Template Metadata objects for all templates. Up to 25 results ret
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -130,7 +130,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TemplatesApi(Configuration.Default);
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
             var cursor = cursor_example;  // string | A cursor value used to retrieve a specific page from a paginated result set. (optional) 
 
             try
@@ -155,7 +155,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
  **cursor** | **string**| A cursor value used to retrieve a specific page from a paginated result set. | [optional] 
 
 ### Return type
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, */*
+- **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

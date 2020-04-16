@@ -1,4 +1,4 @@
-# IO.Dyspatch.Api.LocalizationsApi
+# Dyspatch.Api.LocalizationsApi
 
 All URIs are relative to *https://api.dyspatch.io*
 
@@ -21,9 +21,9 @@ Returns a specific localization object with a matching ID
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -40,7 +40,7 @@ namespace Example
             var apiInstance = new LocalizationsApi(Configuration.Default);
             var localizationId = localizationId_example;  // string | A localization ID
             var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates.
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **string**| A localization ID | 
  **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, */*
+- **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

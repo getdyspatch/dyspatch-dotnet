@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.TemplateRead
+# Dyspatch.Model.TemplateRead
 
 ## Properties
 

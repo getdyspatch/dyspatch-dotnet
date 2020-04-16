@@ -1,4 +1,4 @@
-# IO.Dyspatch.Api.DraftsApi
+# Dyspatch.Api.DraftsApi
 
 All URIs are relative to *https://api.dyspatch.io*
 
@@ -28,9 +28,9 @@ Deletes the localization with the given language ID if it exists
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -47,7 +47,7 @@ namespace Example
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
             var languageId = languageId_example;  // string | A language ID (eg: en-US)
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
  **languageId** | **string**| A language ID (eg: en-US) | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -111,9 +111,9 @@ Gets a draft object with the matching ID. The \"compiled\" field will contain th
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -130,7 +130,7 @@ namespace Example
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
             var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates.
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
  **targetLanguage** | **string**| The type of templating language to compile as. Should only be used for visual templates. | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, */*
+- **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -195,16 +195,16 @@ Name | Type | Description  | Notes
 
 Get localization keys
 
-Returns the list of values that need to be translated for the draft. Set the `Accept` header to `application/vnd.dyspatch.2019.10+json` to get a JSON object, or `text/vnd.dyspatch.2019.10+x-gettext-translation` to get the POT file.
+Returns the list of values that need to be translated for the draft. Set the `Accept` header to `application/vnd.dyspatch.2020.04+json` to get a JSON object, or `text/vnd.dyspatch.2020.04+x-gettext-translation` to get the POT file.
 
 ### Example
 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -220,7 +220,7 @@ namespace Example
 
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -245,7 +245,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, text/vnd.dyspatch.2019.10+x-gettext-translation
+- **Accept**: application/vnd.dyspatch.2020.04+json, text/vnd.dyspatch.2020.04+x-gettext-translation
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -284,9 +284,9 @@ Returns all drafts for your organization.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -301,7 +301,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DraftsApi(Configuration.Default);
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
             var cursor = cursor_example;  // string | A cursor value used to retrieve a specific page from a paginated result set. (optional) 
             var status = status_example;  // string | Filter the list of drafts by a particular status (optional) 
 
@@ -327,7 +327,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
  **cursor** | **string**| A cursor value used to retrieve a specific page from a paginated result set. | [optional] 
  **status** | **string**| Filter the list of drafts by a particular status | [optional] 
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json, */*
+- **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -375,9 +375,9 @@ Returns localization metadata for the draft
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -393,7 +393,7 @@ namespace Example
 
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -418,7 +418,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2019.10+json
+- **Accept**: application/vnd.dyspatch.2020.04+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -457,9 +457,9 @@ Inserts a localization or sets the name on an existing localization that already
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -476,7 +476,7 @@ namespace Example
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
             var languageId = languageId_example;  // string | A language ID (eg: en-US)
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
             var inlineObject = new InlineObject(); // InlineObject | 
 
             try
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
  **languageId** | **string**| A language ID (eg: en-US) | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
  **inlineObject** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
@@ -542,9 +542,9 @@ Completely replaces any existing translations for the given language with those 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -561,7 +561,7 @@ namespace Example
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
             var languageId = languageId_example;  // string | A language ID (eg: en-US)
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
             var requestBody = new Dictionary<string, string>(); // Dictionary<string, string> | 
 
             try
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
  **languageId** | **string**| A language ID (eg: en-US) | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
  **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md)|  | 
 
 ### Return type
@@ -601,12 +601,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful |  -  |
+| **403** | Unauthorized |  * X-RateLimit-Remaining - The number of requests left for the time window. <br>  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -627,9 +628,9 @@ Moves the draft into submitted state.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Dyspatch.Api;
-using IO.Dyspatch.Client;
-using IO.Dyspatch.Model;
+using Dyspatch.Api;
+using Dyspatch.Client;
+using Dyspatch.Model;
 
 namespace Example
 {
@@ -645,7 +646,7 @@ namespace Example
 
             var apiInstance = new DraftsApi(Configuration.Default);
             var draftId = draftId_example;  // string | A draft ID
-            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+            var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
 
             try
             {
@@ -669,7 +670,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **string**| A draft ID | 
- **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; | 
+ **accept** | **string**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; | 
 
 ### Return type
 

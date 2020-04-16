@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.DraftMetaRead
+# Dyspatch.Model.DraftMetaRead
 
 ## Properties
 

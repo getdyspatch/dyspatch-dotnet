@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.Cursor
+# Dyspatch.Model.Cursor
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.APIError
+# Dyspatch.Model.APIError
 
 ## Properties
 

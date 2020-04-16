@@ -1,5 +1,5 @@
 
-# IO.Dyspatch.Model.DraftsRead
+# Dyspatch.Model.DraftsRead
 
 ## Properties
 
