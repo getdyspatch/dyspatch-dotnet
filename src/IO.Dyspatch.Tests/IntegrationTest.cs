@@ -28,7 +28,7 @@ namespace IO.Dyspatch.Tests
         [Fact]
         public void GetTemplates()
         {
-            var accept = "application/vnd.dyspatch.2019.10+json";
+            var accept = "application/vnd.dyspatch.2020.04+json";
             var id = "tem_01de5teh6k59kya8q92mb01qzq";
             var lang = "handlebars";
 
@@ -39,7 +39,7 @@ namespace IO.Dyspatch.Tests
         [Fact]
         public void GetDrafts()
         {
-            var accept = "application/vnd.dyspatch.2019.10+json";
+            var accept = "application/vnd.dyspatch.2020.04+json";
             var id = "tdft_01dxkwr0nevs5h2baa3n3dgktp";
             var lang = "handlebars";
 
