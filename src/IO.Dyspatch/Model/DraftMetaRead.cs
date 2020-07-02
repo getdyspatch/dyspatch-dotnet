@@ -34,16 +34,14 @@ namespace IO.Dyspatch.Model
         /// <param name="id">An opaque, unique identifier for a draft.</param>
         /// <param name="templateId">An opaque, unique identifier for a template.</param>
         /// <param name="name">The name of a draft.</param>
-        /// <param name="description">A description of the draft.</param>
         /// <param name="url">The API url for a specific draft.</param>
         /// <param name="createdAt">The time of initial creation.</param>
         /// <param name="updatedAt">The time of last update.</param>
-        public DraftMetaRead(string id = default(string), string templateId = default(string), string name = default(string), string description = default(string), string url = default(string), DateTimeOffset createdAt = default(DateTimeOffset), DateTimeOffset updatedAt = default(DateTimeOffset))
+        public DraftMetaRead(string id = default(string), string templateId = default(string), string name = default(string), string url = default(string), DateTimeOffset createdAt = default(DateTimeOffset), DateTimeOffset updatedAt = default(DateTimeOffset))
         {
             this.Id = id;
             this.TemplateId = templateId;
             this.Name = name;
-            this.Description = description;
             this.Url = url;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -69,13 +67,6 @@ namespace IO.Dyspatch.Model
         /// <value>The name of a draft</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// A description of the draft
-        /// </summary>
-        /// <value>A description of the draft</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
-        public string Description { get; set; }
 
         /// <summary>
         /// The API url for a specific draft
@@ -109,7 +100,6 @@ namespace IO.Dyspatch.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -163,11 +153,6 @@ namespace IO.Dyspatch.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
@@ -199,8 +184,6 @@ namespace IO.Dyspatch.Model
                     hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.CreatedAt != null)

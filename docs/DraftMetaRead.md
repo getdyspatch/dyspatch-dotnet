@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Id** | **string** | An opaque, unique identifier for a draft | [optional] 
 **TemplateId** | **string** | An opaque, unique identifier for a template | [optional] 
 **Name** | **string** | The name of a draft | [optional] 
-**Description** | **string** | A description of the draft | [optional] 
 **Url** | **string** | The API url for a specific draft | [optional] 
 **CreatedAt** | **DateTimeOffset** | The time of initial creation | [optional] 
 **UpdatedAt** | **DateTimeOffset** | The time of last update | [optional] 
