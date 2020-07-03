@@ -1,6 +1,5 @@
-
 # IO.Dyspatch.Model.APIError
-
+possible errors from the api
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,7 +8,5 @@ Name | Type | Description | Notes
 **Message** | **string** | Human readable error message | [optional] 
 **Parameter** | **string** | The invalid parameter, if &#39;code&#39; is invalid_parameter | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

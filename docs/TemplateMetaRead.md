@@ -1,6 +1,5 @@
-
 # IO.Dyspatch.Model.TemplateMetaRead
-
+the template metadata
 ## Properties
 
 Name | Type | Description | Notes
@@ -13,7 +12,5 @@ Name | Type | Description | Notes
 **CreatedAt** | **DateTimeOffset** | The time of initial creation | [optional] 
 **UpdatedAt** | **DateTimeOffset** | The time of last update | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

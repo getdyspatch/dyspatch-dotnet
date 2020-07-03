@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using RestSharp.Portable;
 using IO.Dyspatch.Client;
 using IO.Dyspatch.Model;
@@ -61,8 +62,9 @@ namespace IO.Dyspatch.Api
         /// <param name="localizationId">A localization ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of LocalizationRead</returns>
-        System.Threading.Tasks.Task<LocalizationRead> GetLocalizationByIdAsync (string localizationId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<LocalizationRead> GetLocalizationByIdAsync (string localizationId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get Localization Object by ID
@@ -74,8 +76,9 @@ namespace IO.Dyspatch.Api
         /// <param name="localizationId">A localization ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (LocalizationRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LocalizationRead>> GetLocalizationByIdAsyncWithHttpInfo (string localizationId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<ApiResponse<LocalizationRead>> GetLocalizationByIdAsyncWithHttpInfo (string localizationId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -245,7 +248,13 @@ namespace IO.Dyspatch.Api
 
             if (localizationId != null) localVarPathParams.Add("localizationId", this.Configuration.ApiClient.ParameterToString(localizationId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -278,10 +287,11 @@ namespace IO.Dyspatch.Api
         /// <param name="localizationId">A localization ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of LocalizationRead</returns>
-        public async System.Threading.Tasks.Task<LocalizationRead> GetLocalizationByIdAsync (string localizationId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<LocalizationRead> GetLocalizationByIdAsync (string localizationId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<LocalizationRead> localVarResponse = await GetLocalizationByIdAsyncWithHttpInfo(localizationId, targetLanguage, accept);
+             ApiResponse<LocalizationRead> localVarResponse = await GetLocalizationByIdAsyncWithHttpInfo(localizationId, targetLanguage, accept, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -293,8 +303,9 @@ namespace IO.Dyspatch.Api
         /// <param name="localizationId">A localization ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (LocalizationRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LocalizationRead>> GetLocalizationByIdAsyncWithHttpInfo (string localizationId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<LocalizationRead>> GetLocalizationByIdAsyncWithHttpInfo (string localizationId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'localizationId' is set
             if (localizationId == null)
@@ -330,7 +341,13 @@ namespace IO.Dyspatch.Api
 
             if (localizationId != null) localVarPathParams.Add("localizationId", this.Configuration.ApiClient.ParameterToString(localizationId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -341,7 +358,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 

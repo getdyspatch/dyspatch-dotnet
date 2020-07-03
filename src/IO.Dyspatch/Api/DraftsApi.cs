@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using RestSharp.Portable;
 using IO.Dyspatch.Client;
 using IO.Dyspatch.Model;
@@ -234,8 +235,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteLocalizationAsync (string draftId, string languageId, string accept);
+        System.Threading.Tasks.Task DeleteLocalizationAsync (string draftId, string languageId, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Remove a localization
@@ -247,8 +249,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get Draft by ID
         /// </summary>
@@ -259,8 +262,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of DraftRead</returns>
-        System.Threading.Tasks.Task<DraftRead> GetDraftByIdAsync (string draftId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<DraftRead> GetDraftByIdAsync (string draftId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get Draft by ID
@@ -272,8 +276,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (DraftRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DraftRead>> GetDraftByIdAsyncWithHttpInfo (string draftId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<ApiResponse<DraftRead>> GetDraftByIdAsyncWithHttpInfo (string draftId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get localization keys
         /// </summary>
@@ -283,8 +288,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;LocalizationKeyRead&gt;</returns>
-        System.Threading.Tasks.Task<List<LocalizationKeyRead>> GetDraftLocalizationKeysAsync (string draftId, string accept);
+        System.Threading.Tasks.Task<List<LocalizationKeyRead>> GetDraftLocalizationKeysAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get localization keys
@@ -295,8 +301,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;LocalizationKeyRead&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<LocalizationKeyRead>>> GetDraftLocalizationKeysAsyncWithHttpInfo (string draftId, string accept);
+        System.Threading.Tasks.Task<ApiResponse<List<LocalizationKeyRead>>> GetDraftLocalizationKeysAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List Drafts
         /// </summary>
@@ -307,8 +314,9 @@ namespace IO.Dyspatch.Api
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of DraftsRead</returns>
-        System.Threading.Tasks.Task<DraftsRead> GetDraftsAsync (string accept, string cursor = default(string), string status = default(string));
+        System.Threading.Tasks.Task<DraftsRead> GetDraftsAsync (string accept, string cursor = default(string), string status = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// List Drafts
@@ -320,8 +328,9 @@ namespace IO.Dyspatch.Api
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (DraftsRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DraftsRead>> GetDraftsAsyncWithHttpInfo (string accept, string cursor = default(string), string status = default(string));
+        System.Threading.Tasks.Task<ApiResponse<DraftsRead>> GetDraftsAsyncWithHttpInfo (string accept, string cursor = default(string), string status = default(string), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get localizations on a draft
         /// </summary>
@@ -331,8 +340,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;LocalizationMetaRead&gt;</returns>
-        System.Threading.Tasks.Task<List<LocalizationMetaRead>> GetLocalizationForDraftAsync (string draftId, string accept);
+        System.Threading.Tasks.Task<List<LocalizationMetaRead>> GetLocalizationForDraftAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get localizations on a draft
@@ -343,8 +353,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;LocalizationMetaRead&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<LocalizationMetaRead>>> GetLocalizationForDraftAsyncWithHttpInfo (string draftId, string accept);
+        System.Threading.Tasks.Task<ApiResponse<List<LocalizationMetaRead>>> GetLocalizationForDraftAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Create or update a localization
         /// </summary>
@@ -356,8 +367,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="inlineObject"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SaveLocalizationAsync (string draftId, string languageId, string accept, InlineObject inlineObject);
+        System.Threading.Tasks.Task SaveLocalizationAsync (string draftId, string languageId, string accept, InlineObject inlineObject, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Create or update a localization
@@ -370,8 +382,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="inlineObject"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SaveLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, InlineObject inlineObject);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SaveLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, InlineObject inlineObject, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Set translations for language
         /// </summary>
@@ -383,8 +396,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="requestBody"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SetTranslationAsync (string draftId, string languageId, string accept, Dictionary<string, string> requestBody);
+        System.Threading.Tasks.Task SetTranslationAsync (string draftId, string languageId, string accept, Dictionary<string, string> requestBody, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Set translations for language
@@ -397,8 +411,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="requestBody"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetTranslationAsyncWithHttpInfo (string draftId, string languageId, string accept, Dictionary<string, string> requestBody);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetTranslationAsyncWithHttpInfo (string draftId, string languageId, string accept, Dictionary<string, string> requestBody, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Submit the draft for approval
         /// </summary>
@@ -408,8 +423,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SubmitDraftForApprovalAsync (string draftId, string accept);
+        System.Threading.Tasks.Task SubmitDraftForApprovalAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Submit the draft for approval
@@ -420,8 +436,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SubmitDraftForApprovalAsyncWithHttpInfo (string draftId, string accept);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SubmitDraftForApprovalAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -588,7 +605,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -621,10 +644,11 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteLocalizationAsync (string draftId, string languageId, string accept)
+        public async System.Threading.Tasks.Task DeleteLocalizationAsync (string draftId, string languageId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await DeleteLocalizationAsyncWithHttpInfo(draftId, languageId, accept);
+             await DeleteLocalizationAsyncWithHttpInfo(draftId, languageId, accept, cancellationToken);
 
         }
 
@@ -635,8 +659,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -670,7 +695,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -681,7 +712,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -754,7 +785,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -787,10 +824,11 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of DraftRead</returns>
-        public async System.Threading.Tasks.Task<DraftRead> GetDraftByIdAsync (string draftId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<DraftRead> GetDraftByIdAsync (string draftId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<DraftRead> localVarResponse = await GetDraftByIdAsyncWithHttpInfo(draftId, targetLanguage, accept);
+             ApiResponse<DraftRead> localVarResponse = await GetDraftByIdAsyncWithHttpInfo(draftId, targetLanguage, accept, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -802,8 +840,9 @@ namespace IO.Dyspatch.Api
         /// <param name="draftId">A draft ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (DraftRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DraftRead>> GetDraftByIdAsyncWithHttpInfo (string draftId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<DraftRead>> GetDraftByIdAsyncWithHttpInfo (string draftId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -839,7 +878,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -850,7 +895,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -917,7 +962,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -949,10 +1000,11 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;LocalizationKeyRead&gt;</returns>
-        public async System.Threading.Tasks.Task<List<LocalizationKeyRead>> GetDraftLocalizationKeysAsync (string draftId, string accept)
+        public async System.Threading.Tasks.Task<List<LocalizationKeyRead>> GetDraftLocalizationKeysAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<LocalizationKeyRead>> localVarResponse = await GetDraftLocalizationKeysAsyncWithHttpInfo(draftId, accept);
+             ApiResponse<List<LocalizationKeyRead>> localVarResponse = await GetDraftLocalizationKeysAsyncWithHttpInfo(draftId, accept, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -963,8 +1015,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;LocalizationKeyRead&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<LocalizationKeyRead>>> GetDraftLocalizationKeysAsyncWithHttpInfo (string draftId, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<List<LocalizationKeyRead>>> GetDraftLocalizationKeysAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -996,7 +1049,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1007,7 +1066,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -1074,7 +1133,13 @@ namespace IO.Dyspatch.Api
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1107,10 +1172,11 @@ namespace IO.Dyspatch.Api
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of DraftsRead</returns>
-        public async System.Threading.Tasks.Task<DraftsRead> GetDraftsAsync (string accept, string cursor = default(string), string status = default(string))
+        public async System.Threading.Tasks.Task<DraftsRead> GetDraftsAsync (string accept, string cursor = default(string), string status = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<DraftsRead> localVarResponse = await GetDraftsAsyncWithHttpInfo(accept, cursor, status);
+             ApiResponse<DraftsRead> localVarResponse = await GetDraftsAsyncWithHttpInfo(accept, cursor, status, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1122,8 +1188,9 @@ namespace IO.Dyspatch.Api
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
         /// <param name="status">Filter the list of drafts by a particular status (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (DraftsRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DraftsRead>> GetDraftsAsyncWithHttpInfo (string accept, string cursor = default(string), string status = default(string))
+        public async System.Threading.Tasks.Task<ApiResponse<DraftsRead>> GetDraftsAsyncWithHttpInfo (string accept, string cursor = default(string), string status = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'accept' is set
             if (accept == null)
@@ -1153,7 +1220,13 @@ namespace IO.Dyspatch.Api
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (status != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1164,7 +1237,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -1230,7 +1303,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1262,10 +1341,11 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;LocalizationMetaRead&gt;</returns>
-        public async System.Threading.Tasks.Task<List<LocalizationMetaRead>> GetLocalizationForDraftAsync (string draftId, string accept)
+        public async System.Threading.Tasks.Task<List<LocalizationMetaRead>> GetLocalizationForDraftAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<LocalizationMetaRead>> localVarResponse = await GetLocalizationForDraftAsyncWithHttpInfo(draftId, accept);
+             ApiResponse<List<LocalizationMetaRead>> localVarResponse = await GetLocalizationForDraftAsyncWithHttpInfo(draftId, accept, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1276,8 +1356,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;LocalizationMetaRead&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<LocalizationMetaRead>>> GetLocalizationForDraftAsyncWithHttpInfo (string draftId, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<List<LocalizationMetaRead>>> GetLocalizationForDraftAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -1308,7 +1389,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1319,7 +1406,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -1395,7 +1482,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
             if (inlineObject != null && inlineObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(inlineObject); // http body (model) parameter
@@ -1437,10 +1530,11 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="inlineObject"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SaveLocalizationAsync (string draftId, string languageId, string accept, InlineObject inlineObject)
+        public async System.Threading.Tasks.Task SaveLocalizationAsync (string draftId, string languageId, string accept, InlineObject inlineObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await SaveLocalizationAsyncWithHttpInfo(draftId, languageId, accept, inlineObject);
+             await SaveLocalizationAsyncWithHttpInfo(draftId, languageId, accept, inlineObject, cancellationToken);
 
         }
 
@@ -1452,8 +1546,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="inlineObject"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SaveLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, InlineObject inlineObject)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SaveLocalizationAsyncWithHttpInfo (string draftId, string languageId, string accept, InlineObject inlineObject, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -1491,7 +1586,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
             if (inlineObject != null && inlineObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(inlineObject); // http body (model) parameter
@@ -1510,7 +1611,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -1587,7 +1688,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -1629,10 +1736,11 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="requestBody"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SetTranslationAsync (string draftId, string languageId, string accept, Dictionary<string, string> requestBody)
+        public async System.Threading.Tasks.Task SetTranslationAsync (string draftId, string languageId, string accept, Dictionary<string, string> requestBody, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await SetTranslationAsyncWithHttpInfo(draftId, languageId, accept, requestBody);
+             await SetTranslationAsyncWithHttpInfo(draftId, languageId, accept, requestBody, cancellationToken);
 
         }
 
@@ -1644,8 +1752,9 @@ namespace IO.Dyspatch.Api
         /// <param name="languageId">A language ID (eg: en-US)</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="requestBody"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SetTranslationAsyncWithHttpInfo (string draftId, string languageId, string accept, Dictionary<string, string> requestBody)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SetTranslationAsyncWithHttpInfo (string draftId, string languageId, string accept, Dictionary<string, string> requestBody, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -1684,7 +1793,13 @@ namespace IO.Dyspatch.Api
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
             if (languageId != null) localVarPathParams.Add("languageId", this.Configuration.ApiClient.ParameterToString(languageId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -1703,7 +1818,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -1768,7 +1883,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1800,10 +1921,11 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SubmitDraftForApprovalAsync (string draftId, string accept)
+        public async System.Threading.Tasks.Task SubmitDraftForApprovalAsync (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await SubmitDraftForApprovalAsyncWithHttpInfo(draftId, accept);
+             await SubmitDraftForApprovalAsyncWithHttpInfo(draftId, accept, cancellationToken);
 
         }
 
@@ -1813,8 +1935,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="draftId">A draft ID</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SubmitDraftForApprovalAsyncWithHttpInfo (string draftId, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SubmitDraftForApprovalAsyncWithHttpInfo (string draftId, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'draftId' is set
             if (draftId == null)
@@ -1845,7 +1968,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (draftId != null) localVarPathParams.Add("draftId", this.Configuration.ApiClient.ParameterToString(draftId)); // path parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1856,7 +1985,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 

@@ -1,6 +1,5 @@
-
 # IO.Dyspatch.Model.LocalizationMetaRead
-
+localization metadata
 ## Properties
 
 Name | Type | Description | Notes
@@ -11,7 +10,5 @@ Name | Type | Description | Notes
 **LocaleGroup** | **string** | the locale group this localization belongs to, if this field is empty the localization does not belong to any locale group | [optional] 
 **Languages** | **List&lt;string&gt;** | a list of locale codes that are available in the localization. See [supported languages](https://docs.dyspatch.io/localization/supported_languages/) for an exhaustive list of locale codes.  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

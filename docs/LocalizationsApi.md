@@ -7,9 +7,8 @@ Method | HTTP request | Description
 [**GetLocalizationById**](LocalizationsApi.md#getlocalizationbyid) | **GET** /localizations/{localizationId} | Get Localization Object by ID
 
 
-
-## GetLocalizationById
-
+<a name="getlocalizationbyid"></a>
+# **GetLocalizationById**
 > LocalizationRead GetLocalizationById (string localizationId, string targetLanguage, string accept)
 
 Get Localization Object by ID
@@ -17,7 +16,6 @@ Get Localization Object by ID
 Returns a specific localization object with a matching ID
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,13 +29,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.dyspatch.io";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.dyspatch.io";
             // Configure API key authorization: Bearer
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new LocalizationsApi(Configuration.Default);
+            var apiInstance = new LocalizationsApi(config);
             var localizationId = localizationId_example;  // string | A localization ID
             var targetLanguage = targetLanguage_example;  // string | The type of templating language to compile as. Should only be used for visual templates.
             var accept = accept_example;  // string | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
@@ -48,7 +47,7 @@ namespace Example
                 LocalizationRead result = apiInstance.GetLocalizationById(localizationId, targetLanguage, accept);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling LocalizationsApi.GetLocalizationById: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -60,7 +59,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -78,8 +76,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.dyspatch.2020.04+json, */*
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -93,8 +91,5 @@ Name | Type | Description  | Notes
 | **500** | Server error |  * X-RateLimit-Remaining - The number of requests left for the time window. <br>  |
 | **0** | Server error |  * X-RateLimit-Remaining - The number of requests left for the time window. <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

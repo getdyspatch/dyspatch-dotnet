@@ -8,6 +8,7 @@
 *.sln.docstates
 ./nuget
 .vscode/
+.vs/
 
 # Build results
 

@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using RestSharp.Portable;
 using IO.Dyspatch.Client;
 using IO.Dyspatch.Model;
@@ -84,8 +85,9 @@ namespace IO.Dyspatch.Api
         /// <param name="templateId">A template ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of TemplateRead</returns>
-        System.Threading.Tasks.Task<TemplateRead> GetTemplateByIdAsync (string templateId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<TemplateRead> GetTemplateByIdAsync (string templateId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get Template by ID
@@ -97,8 +99,9 @@ namespace IO.Dyspatch.Api
         /// <param name="templateId">A template ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (TemplateRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateRead>> GetTemplateByIdAsyncWithHttpInfo (string templateId, string targetLanguage, string accept);
+        System.Threading.Tasks.Task<ApiResponse<TemplateRead>> GetTemplateByIdAsyncWithHttpInfo (string templateId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List Templates
         /// </summary>
@@ -108,8 +111,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of TemplatesRead</returns>
-        System.Threading.Tasks.Task<TemplatesRead> GetTemplatesAsync (string accept, string cursor = default(string));
+        System.Threading.Tasks.Task<TemplatesRead> GetTemplatesAsync (string accept, string cursor = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// List Templates
@@ -120,8 +124,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (TemplatesRead)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplatesRead>> GetTemplatesAsyncWithHttpInfo (string accept, string cursor = default(string));
+        System.Threading.Tasks.Task<ApiResponse<TemplatesRead>> GetTemplatesAsyncWithHttpInfo (string accept, string cursor = default(string), CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -291,7 +296,13 @@ namespace IO.Dyspatch.Api
 
             if (templateId != null) localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -324,10 +335,11 @@ namespace IO.Dyspatch.Api
         /// <param name="templateId">A template ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of TemplateRead</returns>
-        public async System.Threading.Tasks.Task<TemplateRead> GetTemplateByIdAsync (string templateId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<TemplateRead> GetTemplateByIdAsync (string templateId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<TemplateRead> localVarResponse = await GetTemplateByIdAsyncWithHttpInfo(templateId, targetLanguage, accept);
+             ApiResponse<TemplateRead> localVarResponse = await GetTemplateByIdAsyncWithHttpInfo(templateId, targetLanguage, accept, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -339,8 +351,9 @@ namespace IO.Dyspatch.Api
         /// <param name="templateId">A template ID</param>
         /// <param name="targetLanguage">The type of templating language to compile as. Should only be used for visual templates.</param>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (TemplateRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateRead>> GetTemplateByIdAsyncWithHttpInfo (string templateId, string targetLanguage, string accept)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateRead>> GetTemplateByIdAsyncWithHttpInfo (string templateId, string targetLanguage, string accept, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'templateId' is set
             if (templateId == null)
@@ -376,7 +389,13 @@ namespace IO.Dyspatch.Api
 
             if (templateId != null) localVarPathParams.Add("templateId", this.Configuration.ApiClient.ParameterToString(templateId)); // path parameter
             if (targetLanguage != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "targetLanguage", targetLanguage)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -387,7 +406,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
@@ -451,7 +470,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null)
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            }
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -483,10 +508,11 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of TemplatesRead</returns>
-        public async System.Threading.Tasks.Task<TemplatesRead> GetTemplatesAsync (string accept, string cursor = default(string))
+        public async System.Threading.Tasks.Task<TemplatesRead> GetTemplatesAsync (string accept, string cursor = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<TemplatesRead> localVarResponse = await GetTemplatesAsyncWithHttpInfo(accept, cursor);
+             ApiResponse<TemplatesRead> localVarResponse = await GetTemplatesAsyncWithHttpInfo(accept, cursor, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -497,8 +523,9 @@ namespace IO.Dyspatch.Api
         /// <exception cref="IO.Dyspatch.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accept">A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot;</param>
         /// <param name="cursor">A cursor value used to retrieve a specific page from a paginated result set. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (TemplatesRead)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplatesRead>> GetTemplatesAsyncWithHttpInfo (string accept, string cursor = default(string))
+        public async System.Threading.Tasks.Task<ApiResponse<TemplatesRead>> GetTemplatesAsyncWithHttpInfo (string accept, string cursor = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'accept' is set
             if (accept == null)
@@ -527,7 +554,13 @@ namespace IO.Dyspatch.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
-            if (accept != null) localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            if (accept != null) 
+            {
+                if (localVarHeaderParams.ContainsKey("Accept"))
+                    localVarHeaderParams["Accept"] = this.Configuration.ApiClient.ParameterToString(accept); // header parameter
+                else
+                    localVarHeaderParams.Add("Accept", this.Configuration.ApiClient.ParameterToString(accept)); // header parameter
+            } 
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -538,7 +571,7 @@ namespace IO.Dyspatch.Api
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+                localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
